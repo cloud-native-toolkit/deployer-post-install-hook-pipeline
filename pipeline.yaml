@@ -9,10 +9,12 @@ spec:
       type: string
   tasks:
     - name: post-install
-      taskSpec:
-        steps:
-        - name: run-post-install
-          image: quay.io/ibmtz/ibm-pak-ubi:latest
+      taskRef:
+        kind: Task
+        name: ibm-pak
+      params:
+        - name: SCRIPT
+          value: |
           script: |
             #!/usr/bin/env bash
             mkdir postInstallHook
