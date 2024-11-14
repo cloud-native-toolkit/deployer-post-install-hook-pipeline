@@ -14,5 +14,5 @@ spec:
     - name: pathInRepo
       value: pipeline.yaml
   params:
-  - name: githubRepo
-    value: "https://github.com/cloud-native-toolkit/deployer-post-install-hook-example.git"
+    - name: githubRepo
+      value: "https://github.com/cloud-native-toolkit/deployer-post-install-hook-example.git"

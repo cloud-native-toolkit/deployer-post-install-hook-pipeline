@@ -10,10 +10,12 @@ spec:
       default: ""
   tasks:
     - name: post-install
+      params:
+      - name: githubRepo
+        value: "$(params.githubRepo)"
       taskSpec:
         params:
-        - name: githubRepo
-          value: $(params.githubRepo)
+          - name: githubRepo
         steps:
         - name: git-clone-step
           image: quay.io/ibmtz/ibm-pak-ubi:latest
