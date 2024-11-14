@@ -15,7 +15,6 @@ spec:
       params:
         - name: SCRIPT
           value: |
-          script: |
             #!/usr/bin/env bash
             mkdir postInstallHook
             cd postInstallHook
