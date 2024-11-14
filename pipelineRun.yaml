@@ -1,7 +1,8 @@
 apiVersion: tekton.dev/v1
 kind: PipelineRun
 metadata:
-  name: git-clone-demo-pr
+  name: post-install-hook-pr
+  namespace: default
 spec:
   pipelineRef:
     resolver: git
