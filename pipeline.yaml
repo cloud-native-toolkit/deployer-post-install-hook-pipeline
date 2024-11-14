@@ -22,7 +22,7 @@ spec:
           script: |
             #!/usr/bin/env bash
             mkdir postInstallHook
-            cd postInstallHook
-            git clone $(params.githubRepo) 
+            git clone $(params.githubRepo) /postInstallHook
+            cd  /postInstallHook
             ls -la
             bash main.sh
