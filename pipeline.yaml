@@ -4,16 +4,18 @@ metadata:
   name: app-deploy
 spec:
   params:
-    - default: deployer
+    - default: githubRepo
       name: name
       type: string
   tasks:
-    - name: hi
-      params:
-        - name: SCRIPT
-          value: |-
-            echo "$(params.name)"
-            oc ibm-pak help
-      taskRef:
-        kind: Task
-        name: ibm-pak-0.2
+    - name: get-sources
+      taskSpec:
+        steps:
+        - name: git-clone-step
+          image: quay.io/ibmtz/ibm-pak-ubi:latest
+          script: |
+            #!/usr/bin/env bash
+            mkdir postInstallHook
+            cd postInstallHook
+            git clone $(params.githubRepo) 
+            bash main.sh
