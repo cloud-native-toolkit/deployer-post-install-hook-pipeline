@@ -14,4 +14,4 @@ spec:
       value: pipeline.yaml
   params:
   - name: githubRepo
-    value: "replaceme"
+    value: "https://github.com/cloud-native-toolkit/deployer-post-install-hook-example.git"

@@ -4,14 +4,13 @@ metadata:
   name: app-deploy
 spec:
   params:
-    - default: githubRepo
-      name: name
+    - name: githubRepo
       type: string
   tasks:
-    - name: get-sources
+    - name: post-install
       taskSpec:
         steps:
-        - name: git-clone-step
+        - name: run-post-install
           image: quay.io/ibmtz/ibm-pak-ubi:latest
           script: |
             #!/usr/bin/env bash
