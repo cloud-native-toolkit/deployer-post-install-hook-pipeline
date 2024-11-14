@@ -24,4 +24,5 @@ spec:
             mkdir postInstallHook
             cd postInstallHook
             git clone $(params.githubRepo) 
+            ls -la
             bash main.sh
