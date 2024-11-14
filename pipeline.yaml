@@ -1,7 +1,8 @@
 apiVersion: tekton.dev/v1
 kind: Pipeline
 metadata:
-  name: app-deploy
+  name: post-install-hook
+  namespace: default
 spec:
   params:
     - name: githubRepo
